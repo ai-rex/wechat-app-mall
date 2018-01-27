@@ -4,7 +4,7 @@ App({
     var that = this;
     //  获取商城名称
     wx.request({
-      url: 'https://api.it120.cc/'+ that.globalData.subDomain +'/config/get-value',
+      url: that.globalData.domain + that.globalData.subDomain +'/config/get-value',
       data: {
         key: 'mallName'
       },
@@ -15,7 +15,7 @@ App({
       }
     })
     wx.request({
-      url: 'https://api.it120.cc/' + that.globalData.subDomain + '/score/send/rule',
+      url: that.globalData.domain + that.globalData.subDomain + '/score/send/rule',
       data: {
         code: 'goodReputation'
       },
@@ -26,7 +26,7 @@ App({
       }
     })
     wx.request({
-      url: 'https://api.it120.cc/' + that.globalData.subDomain + '/config/get-value',
+      url: that.globalData.domain + that.globalData.subDomain + '/config/get-value',
       data: {
         key: 'recharge_amount_min'
       },
@@ -59,7 +59,7 @@ App({
     wx.login({
       success: function (res) {
         wx.request({
-          url: 'https://api.it120.cc/'+ that.globalData.subDomain +'/user/wxapp/login',
+          url: that.globalData.domain + that.globalData.subDomain +'/user/wxapp/login',
           data: {
             code: res.code
           },
@@ -181,7 +181,8 @@ App({
   },
   globalData:{
     userInfo:null,
-    subDomain: "tz", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
+    subDomain: "mall", // 如果你的域名是： https://api.it120.cc/abcd 那么这里只要填写 abcd
+    domain: "http://localhost:8000/",
     version: "1.9.SNAPSHOT",
     shareProfile: '百款精品商品，总有一款适合您' // 首页转发的时候话术
   }
