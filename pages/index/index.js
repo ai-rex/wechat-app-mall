@@ -76,7 +76,7 @@ Page({
     })
     */
     wx.request({
-      url: 'https://api.it120.cc/' + app.globalData.subDomain + '/banner/list',
+      url: app.globalData.domain + app.globalData.subDomain + '/banner/list',
       data: {
         key: 'mallName'
       },
